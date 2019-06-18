@@ -89,9 +89,6 @@
 ;; fix flycheck lessc error
 (setq flycheck-less-executable "/usr/local/bin/lessc")
 
-;; treemacs icon size
-(treemacs-resize-icons 12)
-
 ;; web-mode hook
 (defun customize-web-mode ()
   "My web mode hooks."
