@@ -4,7 +4,7 @@
 
 (use-package smartparens-config
   :ensure smartparens
-  :hook (prog-mode . smartparens-mode)
+  :hook (prog-mode . smartparens-strict-mode)
   :bind(("C-M-a" . 'sp-beginning-of-sexp)
         ("C-M-e" . 'sp-end-of-sexp)
         ("C-M-n" . 'sp-down-sexp)

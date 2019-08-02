@@ -14,6 +14,7 @@
 (global-set-key (kbd "C-M-g") 'avy-goto-line)
 (global-set-key (kbd "C-x c l") 'avy-copy-line)
 (global-set-key (kbd "C-x c r") 'avy-copy-region)
+(global-set-key (kbd "C-x c k") 'avy-kill-region)
 (global-unset-key (kbd "C-x m"))
 (global-set-key (kbd "C-x m l") 'avy-move-line)
 (global-set-key (kbd "C-x m r") 'avy-move-region)
@@ -59,6 +60,7 @@
                                                  projectile-root-top-down-recurring
                                                  projectile-root-bottom-up
                                                  projectile-root-local))
+(setq projectile-enable-caching nil)
 ;; other key bindings
 ;; join line to next line
 (global-set-key (kbd "C-j")
@@ -70,7 +72,10 @@
 (global-set-key (kbd "s-p") 'md-move-lines-up)
 (global-set-key (kbd "s-n") 'md-move-lines-down)
 
-(global-set-key (kbd "C-;") 'iedit-mode)
+;; iedit mode key binding
+(use-package iedit
+  :config
+  (global-set-key (kbd "C-;") 'iedit-mode))
 
 (global-set-key (kbd "C-x o") 'other-frame)
 
@@ -88,6 +93,9 @@
 
 ;; fix flycheck lessc error
 (setq flycheck-less-executable "/usr/local/bin/lessc")
+
+;; ts indent
+(setq typescript-indent-level 2)
 
 ;; web-mode hook
 (defun customize-web-mode ()

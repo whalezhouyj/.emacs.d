@@ -7,13 +7,10 @@
 ;;; Code:
 
 ;; Produce backtraces when errors occur
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 
-(let ((minver "24.4"))
-  (when (version< emacs-version minver)
-    (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
-(when (version< emacs-version "25.1")
-  (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
+
+
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-benchmarking) ;; Measure startup time
@@ -38,6 +35,7 @@
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
 (require 'init-elpa)      ;; Machinery for installing required packages
+(require 'init-use-package)
 (require 'init-exec-path) ;; Set up $PATH
 
 ;;----------------------------------------------------------------------------
@@ -68,7 +66,6 @@
 (require 'init-recentf)
 (require 'init-smex)
 (require 'init-ivy)
-;;(require 'init-helm)
 (require 'init-hippie-expand)
 (require 'init-company)
 (require 'init-windows)
@@ -86,7 +83,6 @@
 (require 'init-projectile)
 
 (require 'init-compile)
-;;(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
 (require 'init-csv)
@@ -99,14 +95,9 @@
 (require 'init-css)
 (require 'init-haml)
 (require 'init-http)
-;; (require 'init-python)
-;; (require 'init-haskell)
-;; (require 'init-elm)
-;; (require 'init-purescript)
 (require 'init-ruby)
 (require 'init-rails)
 (require 'init-sql)
-;; (require 'init-rust)
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)

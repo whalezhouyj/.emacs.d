@@ -106,10 +106,6 @@
 
 
 
-(when (fboundp 'global-prettify-symbols-mode)
-  (add-hook 'after-init-hook 'global-prettify-symbols-mode))
-
-
 (when (maybe-require-package 'symbol-overlay)
   (dolist (hook '(prog-mode-hook html-mode-hook yaml-mode-hook conf-mode-hook))
     (add-hook hook 'symbol-overlay-mode))
@@ -154,8 +150,8 @@
 ;; Expand region
 ;;----------------------------------------------------------------------------
 (use-package expand-region
-  :bind (("C-=" . 'er/expand-region)
-         ("C-l" . 'er/mark-word)))
+:bind (("C-=" . 'er/expand-region)
+       ("C-l" . 'er/mark-word)))
 
 
 ;;----------------------------------------------------------------------------
