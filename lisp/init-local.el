@@ -18,7 +18,7 @@
 (global-unset-key (kbd "C-x m"))
 (global-set-key (kbd "C-x m l") 'avy-move-line)
 (global-set-key (kbd "C-x m r") 'avy-move-region)
-(setq avy-timeout-seconds 0.2)
+(setq avy-timeout-seconds 0.3)
 (setq avy-style 'pre)
 
 ;; ivy
@@ -67,6 +67,19 @@
                 (lambda ()
                   (interactive)
                   (join-line -1)))
+(global-set-key (kbd "C-X C-l") nil)
+
+(defun copy-file-relative-name ()
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (with-temp-buffer
+        (insert filename)
+        (clipboard-kill-region (point-min) (point-max)))
+      (message filename)))
+  )
 
 (setq mac-option-modifier 'super)
 (global-set-key (kbd "s-p") 'md-move-lines-up)
@@ -93,9 +106,6 @@
 
 ;; fix flycheck lessc error
 (setq flycheck-less-executable "/usr/local/bin/lessc")
-
-;; ts indent
-(setq typescript-indent-level 2)
 
 ;; web-mode hook
 (defun customize-web-mode ()
