@@ -1,6 +1,7 @@
 ;;; init-use-package.el --- Defaults for use-package -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+(require-package 'use-package)
 
 (eval-when-compile
   (require 'use-package))

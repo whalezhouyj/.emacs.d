@@ -44,7 +44,7 @@
 (use-package typescript-mode
   :mode (("\\.tsx\\'" . typescript-mode)))
 
-(Defun setup-tide-mode ()
+(defun setup-tide-mode ()
   (interactive)
   (tide-setup)
   (flycheck-mode +1)
