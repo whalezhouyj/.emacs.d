@@ -57,7 +57,7 @@
 (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-dired)
-(require 'init-isearch)
+;; (require 'init-isearch)
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
@@ -96,7 +96,6 @@
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)
-(require 'init-terraform)
 (maybe-require-package 'nginx-mode)
 
 (require 'init-smartparens)

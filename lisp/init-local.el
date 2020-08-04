@@ -24,6 +24,10 @@
 ;; ivy
 (global-set-key (kbd "C-c i r") 'ivy-resume)
 
+;; enable global undo tree mode
+(global-undo-tree-mode)
+
+
 ;;see https://oremacs.com/2016/01/06/ivy-flx/
 (setq ivy-re-builders-alist
       '((counsel-M-x . ivy--regex-fuzzy)
@@ -68,6 +72,7 @@
                   (interactive)
                   (join-line -1)))
 (global-set-key (kbd "C-X C-l") nil)
+(global-set-key (kbd "M-c") nil)
 
 (defun copy-file-relative-name ()
   (interactive)
