@@ -18,6 +18,7 @@
 (global-unset-key (kbd "C-x m"))
 (global-set-key (kbd "C-x m l") 'avy-move-line)
 (global-set-key (kbd "C-x m r") 'avy-move-region)
+(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (setq avy-timeout-seconds 0.3)
 (setq avy-style 'pre)
 
@@ -27,6 +28,8 @@
 ;; enable global undo tree mode
 (global-undo-tree-mode)
 
+;; set tab width to 2
+(setq tab-width 2)
 
 ;;see https://oremacs.com/2016/01/06/ivy-flx/
 (setq ivy-re-builders-alist
